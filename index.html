@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="calculator">
-        <input type="text" id="inputBox" placeholder="0">
+        <input type="text" id="inputBox" placeholder="0" readonly> 
         <div class="buttons">
             <button class="operator">+</button>
             <button class="operator">-</button>
@@ -29,32 +29,6 @@
             <button>.</button>
         </div>
     </div>
-
-    <script>
-        const input = document.getElementById("inputBox");
-        const buttons = document.querySelectorAll("button");
-
-        let string = "";
-
-        buttons.forEach(button => {
-            button.addEventListener("click", (e) => {
-                if (e.target.innerHTML === "=") {
-                    try {
-                        string = eval(string);
-                        input.value = string;
-                    } catch (error) {
-                        input.value = "Error";
-                    }
-                } else if (e.target.classList.contains("clear")) {
-                    string = "";
-                    input.value = "";
-                } else {
-                    string += e.target.innerHTML;
-                    input.value = string;
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
